@@ -1,3 +1,23 @@
+function initializeGame() {
+  return new Promise((resolve) => {
+    console.log("Initializing game...");
+    setTimeout(() => {
+      console.log("Game initialized successfully!");
+      resolve();
+    }, 2000); 
+  });
+}
+
+function movePlayer(direction) {
+  return new Promise((resolve) => {
+    console.log(`Player moving ${direction}...`);
+    setTimeout(() => {
+      console.log(`Player moved ${direction} successfully!`);
+      resolve();
+    }, 1000); 
+  });
+}
+
 let playerScore = 0;
 function calculateScore(points) {
   return new Promise((resolve) => {
@@ -30,5 +50,9 @@ initializeGame()
   .then(() => calculateScore(5))
   .then(() => checkGameOver())
   .catch((error) => console.error("An error occurred:", error));
+
+
+
+
 
 
